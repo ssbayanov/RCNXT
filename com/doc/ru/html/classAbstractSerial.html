@@ -1,0 +1,1943 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>QSerialDevice: Класс AbstractSerial</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="functions.html"><span>Члены&nbsp;классов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Класс AbstractSerial</h1><!-- doxytag: class="AbstractSerial" -->
+<p>Класс <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> предоставляет минимальный и достаточный интерфейс для работы с последовательными устройствами.  
+<a href="#_details">Подробнее...</a></p>
+
+<p><a href="classAbstractSerial-members.html">Полный список членов класса</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Открытые типы</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1">BaudRate</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a147d97911cf1c74a98bd65e98eb7196d">BaudRate50</a> =  50, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1af90c5899dbb67403cf0720301da87d57">BaudRate75</a> =  75, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a0fbfa077bc948495edaf91b16fde33ca">BaudRate110</a> =  110, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a444d5d479fa4764ca9148db12f8f6341">BaudRate134</a> =  134, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1ac1c758f5e2463ba4bb21e5a38dfe21ef">BaudRate150</a> =  150, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a9070eddd0b01b5abef148879d652df73">BaudRate200</a> =  200, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a211927bc604be131a804d641ff476112">BaudRate300</a> =  300, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1af73c68d87a195049f5acc31dcb9dedb5">BaudRate600</a> =  600, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1ae4114e41c05f36b249e4a563b280908a">BaudRate1200</a> =  1200, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1aa04f5e4dd23545bfecec15a28f9053a8">BaudRate1800</a> =  1800, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a2bdc6ab841cd9dd8f68c7dc5a9ddd097">BaudRate2400</a> =  2400, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1aa7075457bdaf93a4270aa66060d41903">BaudRate4800</a> =  4800, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a05454e36736b9e48803fd3fd16b6ecb9">BaudRate9600</a> =  9600, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1af1b9d1da94ea15298948707badcebfe7">BaudRate14400</a> =  14400, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a1b3bfe713cfcb848fb3284585d33591e">BaudRate19200</a> =  19200, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a264638b9dac7fa274023dfe6eec7d969">BaudRate38400</a> =  38400, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1acf588b55f2cf446d2e90c1cbf8514946">BaudRate56000</a> =  56000, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a35587dddb6faaba53eb9aee494e1c8e4">BaudRate57600</a> =  57600, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1ab034b843abf2ae3572d256b202ee70ae">BaudRate76800</a> =  76800, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a2b6f15b713d0526b634b6b3b814b30f4">BaudRate115200</a> =  115200, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1ab442e582ac9a5ee99530cdb91547927a">BaudRate128000</a> =  128000, 
+<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1a800ca3a2a31543c180c5a0f29e30c7db">BaudRate256000</a> =  256000
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374">DataBits</a> { <a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374a725ca3976de4b7f1a283ff04f7474608">DataBits5</a> =  5, 
+<a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374a276f933454c7386d8ab1a4466fce9280">DataBits6</a> =  6, 
+<a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374afbcc090e0a903175fa18041902f1ad0f">DataBits7</a> =  7, 
+<a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374a2dca58b49dfc9dc8458ec7d93b9420fb">DataBits8</a> =  8
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0e">Parity</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0ea444f88cf4c30acd3f8f4ea8613158f4e">ParityNone</a> =  1, 
+<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0ea6fbd263ed93aae064a6cffc800fc5dbb">ParityOdd</a> =  2, 
+<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0eab947cd4e9d131f398eb402cc2c676cad">ParityEven</a> =  3, 
+<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0ea90b5c3c6540bfca3e69f59859744ae90">ParityMark</a> =  4, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0eada9aa3a157b00c3fcd7370eaac2b9e65">ParitySpace</a> =  5
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790d">StopBits</a> { <a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790da6f8640b28a15259872a43e8b8df3395a">StopBits1</a> =  1, 
+<a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790da6f3a940858aa0c4dfa5b2a85ca875c22">StopBits1_5</a> =  15, 
+<a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790da03311387851750741ddda613fae064d8">StopBits2</a> =  2
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783">Flow</a> { <a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783a613759ebdd9e0bbcd722f44f432856f6">FlowControlOff</a> =  1, 
+<a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783ad71befb7933906d4e05805b17072c32d">FlowControlHardware</a> =  2, 
+<a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783a1d01f892232965e3270c45c3cf4daa19">FlowControlXonXoff</a> =  3
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43">Status</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a25766ecc71d1ac7ae7aa23a9fc9be6a1">ENone</a> =  0, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a154d86f64afc5122bbf59875a19ad750">ENoneOpen</a> =  1, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a564456fc010885214667d403157cd702">ENoneClose</a> =  2, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a8c6cfbd11e5204aa50a37f87acb3b3f8">ENoneSetBaudRate</a> =  3, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a37e180690d0f2d328d7f45eddb7fad32">ENoneSetParity</a> =  4, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a7e5ae46173de7cde37448395d6cf7a32">ENoneSetDataBits</a> =  5, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43ae982e123c6372198fd34d9f80251ff53">ENoneSetStopBits</a> =  6, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43acd4fc33c986882daab5a6b852229ad80">ENoneSetFlow</a> =  7, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43ad7578541833f7a54063d3a89220c1a5b">ENoneSetCharTimeout</a> =  8, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a0d249703b9d68209bfff3c14c4ff6939">EOpen</a> =  15, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a345b824d2c9943f59fdd7616a4264fc7">EDeviceIsNotOpen</a> =  16, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a79496db3db86e733116ec0e493c25991">EOpenModeUnsupported</a> =  17, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43ac9e492c1b02467d55159a3c2843fada4">EOpenModeUndefined</a> =  18, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a51506739469aec16c4352f328296876d">EOpenInvalidFD</a> =  19, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a62c7ee87737e6466913de8a5a56673ce">EOpenOldSettingsNotSaved</a> =  20, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a938814599d00ffc0bef1d50d6d8a773e">EOpenGetCurrentSettings</a> =  21, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a6d150fd48b7f0c2612a94f511943b64f">EOpenSetDefaultSettings</a> =  22, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a0c77ad1e779d28f2a52cee7a8f76b661">EDeviceIsOpen</a> =  23, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a9fae4a6c1d8358e2d563ad90269eaba6">ECloseSetOldSettings</a> =  24, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43ae08b5ba69b7728a5ed90ae776afe9e43">ECloseFD</a> =  25, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a9a34c9bea29c67c601fbda755e999bb7">EClose</a> =  26, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a2229e560ca94200af547b306639983b7">ESetBaudRate</a> =  32, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a4cc93633881384c07281e4170ff16586">ESetDataBits</a> =  33, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43aa8cdfd873ae53eb128525dafa7591acb">ESetParity</a> =  34, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43afd1fcb0cd69d4387d7760682fa63d3bf">ESetStopBits</a> =  35, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43aab895236454ed7663baad6d176850f07">ESetFlowControl</a> =  36, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a2206e88345e6257ddad8d81c1b762ecc">ESetCharIntervalTimeout</a> =  37, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a38891dca2a16b6ecde5fc68d414f4b1a">EBytesAvailable</a> =  40, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43afdcddbeee6cee843e0efe51be7c708bf">ESetDtr</a> =  41, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a1f736b0f07594f4eddc1d8c29a059852">ESetRts</a> =  42, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a35848ab6a0a27d3d6c4298c3244ac473">ELineStatus</a> =  43, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a0fdd94fa93b3994af131214ad44ee659">EWaitReadyReadIO</a> =  44, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a0e2acdd8e7b720345c4261db068e4e38">EWaitReadyReadTimeout</a> =  45, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43aa00d7bb698621d1a20af14cab48153ca">EWaitReadyWriteIO</a> =  46, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43ae9920891b328a785b331a38e5c8ac458">EWaitReadyWriteTimeout</a> =  47, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a0eb6d5dcc387ded4a1511c88df15b104">EReadDataIO</a> =  48, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43a01157b6db1463f0b207efb8b78965dcf">EWriteDataIO</a> =  49, 
+<a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43afe39f35ed97d821b4b6dcc9de768ce67">EFlush</a> =  50
+<br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a0863319716f95408c294999078228dba">LineStatus</a> </td></tr>
+<tr><td colspan="2"><h2>Сигналы</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus</a> (const QString &amp;status, QDateTime current)</td></tr>
+<tr><td colspan="2"><h2>Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a6c38a3a4a13a6012245cd930ac5d76b0">AbstractSerial</a> (QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ac4449f4fa19f39c9b449a680e8e80e5c">~AbstractSerial</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a5d10158846eeb575aec5370e46000ea2">setDeviceName</a> (const QString &amp;deviceName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#aab1784e8c45df7706006aaebdb595778">deviceName</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a4230b061e5b7ac1e78f14111fcb5e0c6">setBaudRate</a> (<a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1">BaudRate</a> baudRate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ac04debfe93ef6160c91beb003984a3fb">setBaudRate</a> (const QString &amp;baudRate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ab6afaee0921dcc3d28ad86edd71d3300">baudRate</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a75d3c4841e09dfff92d9023eb5a9c303">listBaudRate</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#af8f9de4e5dd1a5860828811b0dbfa48a">setDataBits</a> (<a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374">DataBits</a> dataBits)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#aa1ebc7c7230df191d34f3d00ae32d649">setDataBits</a> (const QString &amp;dataBits)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a0d0e2b00a07ce791655fc81c055074b1">dataBits</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ad467f9716c0408122f66cb195d1e274c">listDataBits</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a326b0132c818031f3980ba4ed4211747">setParity</a> (<a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0e">Parity</a> parity)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a191602af072c53502a309dec27717bf3">setParity</a> (const QString &amp;parity)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#aeb5fd6928d92fd37c4bd4a286d3823ef">parity</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a0fb20eb64dc40493da4ee5fef75f6252">listParity</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ac5a7d7df595cd3adde5118fc066a7683">setStopBits</a> (<a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790d">StopBits</a> stopBits)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#affc6734d7af587f447a9b5b167f086d8">setStopBits</a> (const QString &amp;stopBits)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a19b81b87f12773ac03f33aadc84b7a47">stopBits</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a1653a7170ca1bd3ce72c4c772f83ce8d">listStopBits</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a3302e6a84396cc857c45b720d18d5c80">setFlowControl</a> (<a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783">Flow</a> flow)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a84d8a9a8a203c817c24b8a0d30e7a31b">setFlowControl</a> (const QString &amp;flow)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ae26d565f341099ef8f30fbea682763fc">flowControl</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#aea0643a963ab9d03f203fb24e94c069f">listFlowControl</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ab3724dba338f618c83c2986cd39c3ac0">setCharIntervalTimeout</a> (int msecs=10)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#af5a722ff5a2acecc4bd0e0e58f782500">charIntervalTimeout</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a33edd9a31838726c3868f450ec722c6d">setDtr</a> (bool set)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a2b7bae7aecda9c5163284d7f367ffd45">setRts</a> (bool set)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ulong&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a49ebaa6c7c3325356f9370006c75e647">lineStatus</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a86b26aab8e89f9d824ca2380d67345b7">open</a> (OpenMode mode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a910eb2d1a06dad8a601761b9f0b93fef">close</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a9ba236a3c0216882a4797e66793dab53">flush</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ac9535db362a73d3bbee652117c59b386">reset</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">qint64&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#aaf5547f961b9814a43df3644300e1cca">bytesAvailable</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a54bff73451f15a1971d109663986331c">waitForReadyRead</a> (int msecs=5000)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a7726f0f8d9662588574d32adad1cb955">waitForBytesWritten</a> (int msecs=5000)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#a4035ced52430f945cb80c6f4cb845b03">enableEmitStatus</a> (bool enable)</td></tr>
+<tr><td colspan="2"><h2>Защищенные члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">qint64&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#ad2eddcc8378f392741907c71e025a2db">readData</a> (char *data, qint64 maxSize)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">qint64&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSerial.html#afe7666f15efc16b4473e64325cbf68af">writeData</a> (const char *data, qint64 maxSize)</td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> предоставляет минимальный и достаточный интерфейс для работы с последовательными устройствами. </p>
+<p>Класс для работы с последовательными устройствами (портами). Этот класс является кросс - платформенной "низкоуровневой" библиотекой, которая основана на Qt4 и, соответственно, может использоваться для создания приложений Qt4.<br/>
+</p>
+<p>Реализация структуры этого класса во многом аналогична реализации QAbstractSocket из поставки Qt4, т.е. соответствует идеологии открытых/закрытых классов (pimpl), а также этот класс является наследником класса QIODevice и соответственно наследует от него все его методы.<br/>
+</p>
+<p>Работа этого класса с последовательным устройством осуществляется в асинхронном режиме!<br/>
+</p>
+<p>При использовании в различных операционных системах - используются их родные системные API:</p>
+<ul>
+<li>в ОС Windows семейств NT/2K/XP и т.д. используется Win32 API.</li>
+<li>в POSIX подобных ОС используются системные вызовы POSIX.</li>
+</ul>
+<p>Начало работы с классом необходимо начинать с создания экземпляра объекта <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>.<br/>
+ Пример: </p>
+<div class="fragment"><pre class="fragment">        ...
+        <a class="code" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> *serialDevice = <span class="keyword">new</span> <a class="code" href="classAbstractSerial.html#a6c38a3a4a13a6012245cd930ac5d76b0">AbstractSerial</a>();
+        ...
+</pre></div><p>Параметры устройства, такие как:<br/>
+ скорость, биты данных, четность, стоп биты, контроль потоком, интервал ожидания символа (в мсек) - всегда принимаются по умолчанию соответственно: 9600 8 N 1 10ms ! Также по умолчанию объекту присвоится первое имя реально существующего в системе устройства.</p>
+<div class="fragment"><pre class="fragment">
+        Операционная система:          Имя устройства по умолчанию:
+        Windows                        "COM1"
+        IRIX                           "/dev/ttyf1"
+        HPUX                           "/dev/tty1p0"
+        SOLARIS                        "/dev/ttya"
+        FREEBSD                        "/dev/ttyd1"
+        LINUX                          "/dev/ttyS0"
+        &lt;default&gt;                      "/dev/ttyS0"
+    </pre></div><p>Далее необходимо устройству(объекту) присвоить реально существующее имя в системе:</p>
+<ul>
+<li>void <a class="el" href="classAbstractSerial.html#a5d10158846eeb575aec5370e46000ea2">AbstractSerial::setDeviceName(const QString &amp;deviceName)</a>.</li>
+</ul>
+<p>Для открытия последовательного устройства необходимо вызвать метод:</p>
+<ul>
+<li>bool <a class="el" href="classAbstractSerial.html#a86b26aab8e89f9d824ca2380d67345b7">AbstractSerial::open(OpenMode mode)</a> - открывает последовательное устройство.<br/>
+ При успешном открытии этот метод вернет <b>true</b>.</li>
+</ul>
+<p>Класс <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> поддерживает только такие опции открытия QIODevice как: <b>OpenMode::ReadOnly</b>, <b>OpenMode::WriteOnly</b>, <b>OpenMode::ReadWrite</b>,<br/>
+ при этом для корректной работы необходимо добавлять режим <b>OpenMode::Unbuffered</b>.<br/>
+ Пример: </p>
+<div class="fragment"><pre class="fragment">        ...
+        <span class="comment">//this example open device as ReadOnly</span>
+        <span class="keywordtype">bool</span> ret = serialDevice-&gt;<a class="code" href="classAbstractSerial.html#a86b26aab8e89f9d824ca2380d67345b7">open</a>(QIODevice::ReadOnly | QIODevice::Unbuffered);
+        ...
+</pre></div> <dl class="note"><dt><b>Заметки:</b></dt><dd>Последовательное устройство <b>ВСЕГДА</b> открывается с параметрами по <b>умолчанию</b> : 9600 8 N 1 50ms.<br/>
+</dd></dl>
+<p>Для закрытия последовательного устройства необходимо вызвать метод:</p>
+<ul>
+<li>void <a class="el" href="classAbstractSerial.html#a910eb2d1a06dad8a601761b9f0b93fef">AbstractSerial::close()</a> - закрывает последовательное устройство.<br/>
+</li>
+</ul>
+<p>После того, как устройство успешно открыто можно приступать к его конфигурированию, для чего необходимо воспользоваться следующими методами:</p>
+<ul>
+<li>bool <a class="el" href="classAbstractSerial.html#a4230b061e5b7ac1e78f14111fcb5e0c6">AbstractSerial::setBaudRate(AbstractSerial::BaudRate)</a> - устанавливает скорость обмена данными.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#af8f9de4e5dd1a5860828811b0dbfa48a">AbstractSerial::setDataBits(AbstractSerial::DataBits)</a> - устанавливает количество бит данных.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#a326b0132c818031f3980ba4ed4211747">AbstractSerial::setParity(AbstractSerial::Parity)</a> - устанавливает контроль четности.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#ac5a7d7df595cd3adde5118fc066a7683">AbstractSerial::setStopBits(AbstractSerial::StopBits)</a> - устанавливает количество стоп бит.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#a3302e6a84396cc857c45b720d18d5c80">AbstractSerial::setFlowControl(AbstractSerial::Flow)</a> - устанавливает контроль управления потоком.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#ab3724dba338f618c83c2986cd39c3ac0">AbstractSerial::setCharIntervalTimeout(int msecs)</a> - устанавливает время ожидания прихода символа при чтении данных.<br/>
+ При успехе метод вернет <b>true</b>. <br/>
+ <dl class="note"><dt><b>Заметки:</b></dt><dd>Т.к. устройство работает в асинхронном режиме, то достаточно для уверенного чтения данных подобрать опытным путем только этот параметр таймаута <b>msecs</b>. Этот параметр является единственным параметром при чтении данных, он только зависит от скорости, и выбирать/рассчитывать его можно опытным путем. Обычно для уверенного приема достаточна величина <b>10ms</b> для всех скоростей. Это упрощает работу с последовательным устройством.</dd></dl>
+<br/>
+</li>
+</ul>
+<p>Для чтения/записи данных в порт рекомендуется использовать следующие методы:</p>
+<ul>
+<li>QByteArray <b>AbstractSerial::read(qint64 maxSize)</b> - читает данные из последовательного устройства.<br/>
+ Метод <b>read(qint64 maxSize)</b> наследован от QIODevice. Теоретически размер maxSize не ограничен, т.к. метод читает доступное количество байт частями. Реально в классе <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> реализован защищенный метод: qint64 <a class="el" href="classAbstractSerial.html#ad2eddcc8378f392741907c71e025a2db">readData(char *data, qint64 maxSize)</a> в котором определена вся логика чтения данных из устройства. Чтение данных осуществляется таким образом, чтобы не терялись данные! <dl class="note"><dt><b>Заметки:</b></dt><dd>Работа метода: QByteArray <b>readAll()</b> не тестировалась. Рекомендуется использовать метод <b>read(qint64 maxSize)</b>.</dd></dl>
+</li>
+<li>qint64 <b>AbstractSerial::write(const QByteArray &amp;byteArray)</b> - записывает данные в последовательное устройство.<br/>
+ Метод <b>write(const QByteArray &amp;byteArray)</b> наследован от QIODevice. Теоретически размер byteArray не ограничен, т.к. метод записывает данные по частям. После записи в устройство всех данных излучается сигнал <b>bytesWritten(qint64 bytes)</b>. Реально в классе <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> реализован защищенный метод: qint64 <a class="el" href="classAbstractSerial.html#afe7666f15efc16b4473e64325cbf68af">writeData(const char *data, qint64 maxSize)</a> в котором определена вся логика записи данных в устройство.</li>
+</ul>
+<p>Для ожидания прихода данных в последовательное устройство используется метод:</p>
+<ul>
+<li>bool <a class="el" href="classAbstractSerial.html#a54bff73451f15a1971d109663986331c">AbstractSerial::waitForReadyRead(int msecs)</a> - метод ожидает в течении времени msecs прихода в приемный буфер последовательного устройства хотя бы одного байта данных.<br/>
+ При успешном завершении ожидания (когда байт пришел до таймаута <b>msecs</b>) метод излучает сигнал <b>readyRead()</b> и возвращает <b>true</b>.</li>
+</ul>
+<p>Для очистки буферов последовательного устройства используются методы:</p>
+<ul>
+<li>bool <a class="el" href="classAbstractSerial.html#a9ba236a3c0216882a4797e66793dab53">AbstractSerial::flush()</a> - принудительно ожидает завершения операций чтения/записи и по их окончании очищает очереди ввода/вывода. При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#ac9535db362a73d3bbee652117c59b386">AbstractSerial::reset()</a> - не ожидая завершения операций ввода/вывода очищает буферы последовательного устройства. При успехе метод вернет <b>true</b>.</li>
+</ul>
+<p>Для управления линиями DTR и RTS используются методы:</p>
+<ul>
+<li>bool <a class="el" href="classAbstractSerial.html#a33edd9a31838726c3868f450ec722c6d">AbstractSerial::setDtr(bool set)</a> - устанавливает/сбрасывает линию DTR.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+<li>bool <a class="el" href="classAbstractSerial.html#a2b7bae7aecda9c5163284d7f367ffd45">AbstractSerial::setRts(bool set)</a> - устанавливает/сбрасывает линию RTS.<br/>
+ При успехе метод вернет <b>true</b>.</li>
+</ul>
+<p>Для получения статусов линий CTS, DSR, DCD, RI, RTS, DTR, ST, SR используется метод:</p>
+<ul>
+<li>ulong <a class="el" href="classAbstractSerial.html#a49ebaa6c7c3325356f9370006c75e647">AbstractSerial::lineStatus()</a> - возвращает закодированные значения статусов линий побитовым <b>ИЛИ</b> (см. enum <a class="el" href="classAbstractSerial.html#a0863319716f95408c294999078228dba">AbstractSerial::LineStatus</a>). <br/>
+</li>
+</ul>
+<div class="fragment"><pre class="fragment">
+        CTS  0x01
+        DSR  0x02
+        DCD  0x04
+        RI   0x08
+        RTS  0x10
+        DTR  0x20
+        ST   0x40
+        SR   0x80
+    </pre></div><p>Для получения текущего количества байт в приемном буфере последовательного устройства готовых для чтения используется метод:</p>
+<ul>
+<li>qint64 <a class="el" href="classAbstractSerial.html#aaf5547f961b9814a43df3644300e1cca">AbstractSerial::bytesAvailable()</a> - получает текущее количество байт в приемном буфере.<br/>
+</li>
+</ul>
+<p>Для включения/отключения режима излучения сигнала <a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus()</a> используется метод:</p>
+<ul>
+<li>void <a class="el" href="classAbstractSerial.html#a4035ced52430f945cb80c6f4cb845b03">AbstractSerial::enableEmitStatus(bool enable)</a>. <br/>
+</li>
+</ul>
+<p>Для получения списка имен последовательных устройств доступных в системе, а также слежения за ними используйте класс: <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a>. <br/>
+</p>
+<p>Класс <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> реализует следующие сигналы:</p>
+<ul>
+<li>void <b>AbstractSerial::readyRead()</b> - излучается <b>ОДИН</b> раз при приходе в приемный буфер устройства хотя бы одного байта данных.<br/>
+ Событие о приходе данных контролируется в цикле сообщений, если приходит следующая часть данных (или один байт) - то сигнал не излучается!<br/>
+ Для того, чтобы сигнал вновь излучился необходимо прочитать из буфера данные методом <b>read()</b> или сбросить буфер <b><a class="el" href="classAbstractSerial.html#ac9535db362a73d3bbee652117c59b386">reset()</a>!</b>  Также этот сигнал излучается каждый раз при успешном вызове метода <a class="el" href="classAbstractSerial.html#a54bff73451f15a1971d109663986331c">waitForReadyRead()</a>.</li>
+<li>void <b>AbstractSerial::bytesWritten(qint64 bytes)</b> - излучается при успешном завершении метода <b>write()</b>.<br/>
+</li>
+<li>void <a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">AbstractSerial::signalStatus(const QString &amp;status, QDateTime current)</a> - несет информацию о текущем статусе последовательного устройства, а также времени и дате возникновения статуса. Излучение сигнала можно включать/отключать при вызове: <a class="el" href="classAbstractSerial.html#a4035ced52430f945cb80c6f4cb845b03">AbstractSerial::enableEmitStatus(bool enable)</a>.<br/>
+ Этот сигнал излучается всякий раз при следующих действиях:<ul>
+<li>при выполнении методов <a class="el" href="classAbstractSerial.html#a86b26aab8e89f9d824ca2380d67345b7">open()</a>, <a class="el" href="classAbstractSerial.html#a910eb2d1a06dad8a601761b9f0b93fef">close()</a></li>
+<li>при ошибках при конфигурировании</li>
+<li>при ошибках чтении/записи и т.д.</li>
+</ul>
+</li>
+</ul>
+<p><br/>
+ <br/>
+ <br/>
+</p>
+<dl class="warning"><dt><b>Предупреждения:</b></dt><dd><ul>
+<li>В этом описании перечислены все реализованные в классе методы. Если же не указан реализованный метод - то значит его значение несущественно.</li>
+<li>По умолчанию класс сконфигурирован таким образом, чтобы записывать в консоль отладочные сообщения. Для отключения вывода этих сообщений в консоль - необходимо закомментировать в *.cpp файлах строчки вида: <div class="fragment"><pre class="fragment">        ...
+        #define NATIVESERIALENGINE_DEBUG
+        ...
+</pre></div> и заново пересобрать библиотеку.</li>
+</ul>
+</dd></dl>
+<p>0.2.0 </p>
+<dl class="author"><dt><b>Автор:</b></dt><dd>Denis Shienkov<ul>
+<li>ICQ : 321789831</li>
+<li>e-mail : <a href="mailto:scapig2@yandex.ru">scapig2@yandex.ru</a></li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd><ul>
+<li>В версии 0.1.0. работа библиотеки тестировалась автором только с: Windows XP SP3 Pro и ArchLinux x86_64.</li>
+<li>Библиотекой теоретически должны поддерживаться такие ОС как: все семейство Windows NT/2k/XP , а также POSIX совместимые. </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00033">33</a></p>
+<hr/><h2>Перечисления</h2>
+<a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1"></a><!-- doxytag: member="AbstractSerial::BaudRate" ref="a091430826fae3e97f88b8ac168b1c6c1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1">AbstractSerial::BaudRate</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> скорости работы. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a147d97911cf1c74a98bd65e98eb7196d"></a><!-- doxytag: member="BaudRate50" ref="a091430826fae3e97f88b8ac168b1c6c1a147d97911cf1c74a98bd65e98eb7196d" args="" -->BaudRate50</em>&nbsp;</td><td>
+<p>скорость 50 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1af90c5899dbb67403cf0720301da87d57"></a><!-- doxytag: member="BaudRate75" ref="a091430826fae3e97f88b8ac168b1c6c1af90c5899dbb67403cf0720301da87d57" args="" -->BaudRate75</em>&nbsp;</td><td>
+<p>скорость 75 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a0fbfa077bc948495edaf91b16fde33ca"></a><!-- doxytag: member="BaudRate110" ref="a091430826fae3e97f88b8ac168b1c6c1a0fbfa077bc948495edaf91b16fde33ca" args="" -->BaudRate110</em>&nbsp;</td><td>
+<p>скорость 110 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a444d5d479fa4764ca9148db12f8f6341"></a><!-- doxytag: member="BaudRate134" ref="a091430826fae3e97f88b8ac168b1c6c1a444d5d479fa4764ca9148db12f8f6341" args="" -->BaudRate134</em>&nbsp;</td><td>
+<p>скорость 134 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1ac1c758f5e2463ba4bb21e5a38dfe21ef"></a><!-- doxytag: member="BaudRate150" ref="a091430826fae3e97f88b8ac168b1c6c1ac1c758f5e2463ba4bb21e5a38dfe21ef" args="" -->BaudRate150</em>&nbsp;</td><td>
+<p>скорость 150 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a9070eddd0b01b5abef148879d652df73"></a><!-- doxytag: member="BaudRate200" ref="a091430826fae3e97f88b8ac168b1c6c1a9070eddd0b01b5abef148879d652df73" args="" -->BaudRate200</em>&nbsp;</td><td>
+<p>скорость 200 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a211927bc604be131a804d641ff476112"></a><!-- doxytag: member="BaudRate300" ref="a091430826fae3e97f88b8ac168b1c6c1a211927bc604be131a804d641ff476112" args="" -->BaudRate300</em>&nbsp;</td><td>
+<p>скорость 300 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1af73c68d87a195049f5acc31dcb9dedb5"></a><!-- doxytag: member="BaudRate600" ref="a091430826fae3e97f88b8ac168b1c6c1af73c68d87a195049f5acc31dcb9dedb5" args="" -->BaudRate600</em>&nbsp;</td><td>
+<p>скорость 600 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1ae4114e41c05f36b249e4a563b280908a"></a><!-- doxytag: member="BaudRate1200" ref="a091430826fae3e97f88b8ac168b1c6c1ae4114e41c05f36b249e4a563b280908a" args="" -->BaudRate1200</em>&nbsp;</td><td>
+<p>скорость 1200 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1aa04f5e4dd23545bfecec15a28f9053a8"></a><!-- doxytag: member="BaudRate1800" ref="a091430826fae3e97f88b8ac168b1c6c1aa04f5e4dd23545bfecec15a28f9053a8" args="" -->BaudRate1800</em>&nbsp;</td><td>
+<p>скорость 1800 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a2bdc6ab841cd9dd8f68c7dc5a9ddd097"></a><!-- doxytag: member="BaudRate2400" ref="a091430826fae3e97f88b8ac168b1c6c1a2bdc6ab841cd9dd8f68c7dc5a9ddd097" args="" -->BaudRate2400</em>&nbsp;</td><td>
+<p>скорость 2400 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1aa7075457bdaf93a4270aa66060d41903"></a><!-- doxytag: member="BaudRate4800" ref="a091430826fae3e97f88b8ac168b1c6c1aa7075457bdaf93a4270aa66060d41903" args="" -->BaudRate4800</em>&nbsp;</td><td>
+<p>скорость 4800 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a05454e36736b9e48803fd3fd16b6ecb9"></a><!-- doxytag: member="BaudRate9600" ref="a091430826fae3e97f88b8ac168b1c6c1a05454e36736b9e48803fd3fd16b6ecb9" args="" -->BaudRate9600</em>&nbsp;</td><td>
+<p>скорость 9600 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1af1b9d1da94ea15298948707badcebfe7"></a><!-- doxytag: member="BaudRate14400" ref="a091430826fae3e97f88b8ac168b1c6c1af1b9d1da94ea15298948707badcebfe7" args="" -->BaudRate14400</em>&nbsp;</td><td>
+<p>скорость 14400 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a1b3bfe713cfcb848fb3284585d33591e"></a><!-- doxytag: member="BaudRate19200" ref="a091430826fae3e97f88b8ac168b1c6c1a1b3bfe713cfcb848fb3284585d33591e" args="" -->BaudRate19200</em>&nbsp;</td><td>
+<p>скорость 19200 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a264638b9dac7fa274023dfe6eec7d969"></a><!-- doxytag: member="BaudRate38400" ref="a091430826fae3e97f88b8ac168b1c6c1a264638b9dac7fa274023dfe6eec7d969" args="" -->BaudRate38400</em>&nbsp;</td><td>
+<p>скорость 38400 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1acf588b55f2cf446d2e90c1cbf8514946"></a><!-- doxytag: member="BaudRate56000" ref="a091430826fae3e97f88b8ac168b1c6c1acf588b55f2cf446d2e90c1cbf8514946" args="" -->BaudRate56000</em>&nbsp;</td><td>
+<p>скорость 56000 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a35587dddb6faaba53eb9aee494e1c8e4"></a><!-- doxytag: member="BaudRate57600" ref="a091430826fae3e97f88b8ac168b1c6c1a35587dddb6faaba53eb9aee494e1c8e4" args="" -->BaudRate57600</em>&nbsp;</td><td>
+<p>скорость 57600 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1ab034b843abf2ae3572d256b202ee70ae"></a><!-- doxytag: member="BaudRate76800" ref="a091430826fae3e97f88b8ac168b1c6c1ab034b843abf2ae3572d256b202ee70ae" args="" -->BaudRate76800</em>&nbsp;</td><td>
+<p>скорость 76800 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a2b6f15b713d0526b634b6b3b814b30f4"></a><!-- doxytag: member="BaudRate115200" ref="a091430826fae3e97f88b8ac168b1c6c1a2b6f15b713d0526b634b6b3b814b30f4" args="" -->BaudRate115200</em>&nbsp;</td><td>
+<p>скорость 115200 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1ab442e582ac9a5ee99530cdb91547927a"></a><!-- doxytag: member="BaudRate128000" ref="a091430826fae3e97f88b8ac168b1c6c1ab442e582ac9a5ee99530cdb91547927a" args="" -->BaudRate128000</em>&nbsp;</td><td>
+<p>скорость 128000 бод </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a091430826fae3e97f88b8ac168b1c6c1a800ca3a2a31543c180c5a0f29e30c7db"></a><!-- doxytag: member="BaudRate256000" ref="a091430826fae3e97f88b8ac168b1c6c1a800ca3a2a31543c180c5a0f29e30c7db" args="" -->BaudRate256000</em>&nbsp;</td><td>
+<p>скорость 256000 бод </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00048">48</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a14e5a12d7683ff97a20d6cde8137c374"></a><!-- doxytag: member="AbstractSerial::DataBits" ref="a14e5a12d7683ff97a20d6cde8137c374" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374">AbstractSerial::DataBits</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> количества бит данных. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a14e5a12d7683ff97a20d6cde8137c374a725ca3976de4b7f1a283ff04f7474608"></a><!-- doxytag: member="DataBits5" ref="a14e5a12d7683ff97a20d6cde8137c374a725ca3976de4b7f1a283ff04f7474608" args="" -->DataBits5</em>&nbsp;</td><td>
+<p>5 бит данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a14e5a12d7683ff97a20d6cde8137c374a276f933454c7386d8ab1a4466fce9280"></a><!-- doxytag: member="DataBits6" ref="a14e5a12d7683ff97a20d6cde8137c374a276f933454c7386d8ab1a4466fce9280" args="" -->DataBits6</em>&nbsp;</td><td>
+<p>6 бит данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a14e5a12d7683ff97a20d6cde8137c374afbcc090e0a903175fa18041902f1ad0f"></a><!-- doxytag: member="DataBits7" ref="a14e5a12d7683ff97a20d6cde8137c374afbcc090e0a903175fa18041902f1ad0f" args="" -->DataBits7</em>&nbsp;</td><td>
+<p>7 бит данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a14e5a12d7683ff97a20d6cde8137c374a2dca58b49dfc9dc8458ec7d93b9420fb"></a><!-- doxytag: member="DataBits8" ref="a14e5a12d7683ff97a20d6cde8137c374a2dca58b49dfc9dc8458ec7d93b9420fb" args="" -->DataBits8</em>&nbsp;</td><td>
+<p>8 бит данных </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00076">76</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5f545bacabb6ac912896a43fe8ac8783"></a><!-- doxytag: member="AbstractSerial::Flow" ref="a5f545bacabb6ac912896a43fe8ac8783" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783">AbstractSerial::Flow</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> режимы управления потоком. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a5f545bacabb6ac912896a43fe8ac8783a613759ebdd9e0bbcd722f44f432856f6"></a><!-- doxytag: member="FlowControlOff" ref="a5f545bacabb6ac912896a43fe8ac8783a613759ebdd9e0bbcd722f44f432856f6" args="" -->FlowControlOff</em>&nbsp;</td><td>
+<p>управление потоком отключено </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5f545bacabb6ac912896a43fe8ac8783ad71befb7933906d4e05805b17072c32d"></a><!-- doxytag: member="FlowControlHardware" ref="a5f545bacabb6ac912896a43fe8ac8783ad71befb7933906d4e05805b17072c32d" args="" -->FlowControlHardware</em>&nbsp;</td><td>
+<p>управление потоком аппаратное </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5f545bacabb6ac912896a43fe8ac8783a1d01f892232965e3270c45c3cf4daa19"></a><!-- doxytag: member="FlowControlXonXoff" ref="a5f545bacabb6ac912896a43fe8ac8783a1d01f892232965e3270c45c3cf4daa19" args="" -->FlowControlXonXoff</em>&nbsp;</td><td>
+<p>управление потоком Xon/Xoff </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00106">106</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0863319716f95408c294999078228dba"></a><!-- doxytag: member="AbstractSerial::LineStatus" ref="a0863319716f95408c294999078228dba" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a0863319716f95408c294999078228dba">AbstractSerial::LineStatus</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> состояния линий порта: CTS, DSR, DCD, RI, RTS, DTR, ST, SR (см. стандарт RS-232 и т.п.) </p>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00169">169</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae14096ea164575549a1122c762a97c0e"></a><!-- doxytag: member="AbstractSerial::Parity" ref="ae14096ea164575549a1122c762a97c0e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0e">AbstractSerial::Parity</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> типы контроля паритета. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ae14096ea164575549a1122c762a97c0ea444f88cf4c30acd3f8f4ea8613158f4e"></a><!-- doxytag: member="ParityNone" ref="ae14096ea164575549a1122c762a97c0ea444f88cf4c30acd3f8f4ea8613158f4e" args="" -->ParityNone</em>&nbsp;</td><td>
+<p>без контроля четности </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae14096ea164575549a1122c762a97c0ea6fbd263ed93aae064a6cffc800fc5dbb"></a><!-- doxytag: member="ParityOdd" ref="ae14096ea164575549a1122c762a97c0ea6fbd263ed93aae064a6cffc800fc5dbb" args="" -->ParityOdd</em>&nbsp;</td><td>
+<p>паритет "нечет" </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae14096ea164575549a1122c762a97c0eab947cd4e9d131f398eb402cc2c676cad"></a><!-- doxytag: member="ParityEven" ref="ae14096ea164575549a1122c762a97c0eab947cd4e9d131f398eb402cc2c676cad" args="" -->ParityEven</em>&nbsp;</td><td>
+<p>паритет "чет" </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae14096ea164575549a1122c762a97c0ea90b5c3c6540bfca3e69f59859744ae90"></a><!-- doxytag: member="ParityMark" ref="ae14096ea164575549a1122c762a97c0ea90b5c3c6540bfca3e69f59859744ae90" args="" -->ParityMark</em>&nbsp;</td><td>
+<p>паритет "маркер" </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae14096ea164575549a1122c762a97c0eada9aa3a157b00c3fcd7370eaac2b9e65"></a><!-- doxytag: member="ParitySpace" ref="ae14096ea164575549a1122c762a97c0eada9aa3a157b00c3fcd7370eaac2b9e65" args="" -->ParitySpace</em>&nbsp;</td><td>
+<p>паритет "пробел" </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00086">86</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43"></a><!-- doxytag: member="AbstractSerial::Status" ref="a848720f9216a4dc8c1d86d16c77c7a43" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a848720f9216a4dc8c1d86d16c77c7a43">AbstractSerial::Status</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> статусы работы. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a25766ecc71d1ac7ae7aa23a9fc9be6a1"></a><!-- doxytag: member="ENone" ref="a848720f9216a4dc8c1d86d16c77c7a43a25766ecc71d1ac7ae7aa23a9fc9be6a1" args="" -->ENone</em>&nbsp;</td><td>
+<p>нет ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a154d86f64afc5122bbf59875a19ad750"></a><!-- doxytag: member="ENoneOpen" ref="a848720f9216a4dc8c1d86d16c77c7a43a154d86f64afc5122bbf59875a19ad750" args="" -->ENoneOpen</em>&nbsp;</td><td>
+<p>открыто без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a564456fc010885214667d403157cd702"></a><!-- doxytag: member="ENoneClose" ref="a848720f9216a4dc8c1d86d16c77c7a43a564456fc010885214667d403157cd702" args="" -->ENoneClose</em>&nbsp;</td><td>
+<p>закрыто без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a8c6cfbd11e5204aa50a37f87acb3b3f8"></a><!-- doxytag: member="ENoneSetBaudRate" ref="a848720f9216a4dc8c1d86d16c77c7a43a8c6cfbd11e5204aa50a37f87acb3b3f8" args="" -->ENoneSetBaudRate</em>&nbsp;</td><td>
+<p>скорость установлена без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a37e180690d0f2d328d7f45eddb7fad32"></a><!-- doxytag: member="ENoneSetParity" ref="a848720f9216a4dc8c1d86d16c77c7a43a37e180690d0f2d328d7f45eddb7fad32" args="" -->ENoneSetParity</em>&nbsp;</td><td>
+<p>паритет установлен без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a7e5ae46173de7cde37448395d6cf7a32"></a><!-- doxytag: member="ENoneSetDataBits" ref="a848720f9216a4dc8c1d86d16c77c7a43a7e5ae46173de7cde37448395d6cf7a32" args="" -->ENoneSetDataBits</em>&nbsp;</td><td>
+<p>биты данных установлены без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43ae982e123c6372198fd34d9f80251ff53"></a><!-- doxytag: member="ENoneSetStopBits" ref="a848720f9216a4dc8c1d86d16c77c7a43ae982e123c6372198fd34d9f80251ff53" args="" -->ENoneSetStopBits</em>&nbsp;</td><td>
+<p>стоп-биты установлены без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43acd4fc33c986882daab5a6b852229ad80"></a><!-- doxytag: member="ENoneSetFlow" ref="a848720f9216a4dc8c1d86d16c77c7a43acd4fc33c986882daab5a6b852229ad80" args="" -->ENoneSetFlow</em>&nbsp;</td><td>
+<p>управление потоком установлено без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43ad7578541833f7a54063d3a89220c1a5b"></a><!-- doxytag: member="ENoneSetCharTimeout" ref="a848720f9216a4dc8c1d86d16c77c7a43ad7578541833f7a54063d3a89220c1a5b" args="" -->ENoneSetCharTimeout</em>&nbsp;</td><td>
+<p>интервал ожидания символа установлен без ошибок </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a0d249703b9d68209bfff3c14c4ff6939"></a><!-- doxytag: member="EOpen" ref="a848720f9216a4dc8c1d86d16c77c7a43a0d249703b9d68209bfff3c14c4ff6939" args="" -->EOpen</em>&nbsp;</td><td>
+<p>ошибка при открытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a345b824d2c9943f59fdd7616a4264fc7"></a><!-- doxytag: member="EDeviceIsNotOpen" ref="a848720f9216a4dc8c1d86d16c77c7a43a345b824d2c9943f59fdd7616a4264fc7" args="" -->EDeviceIsNotOpen</em>&nbsp;</td><td>
+<p>устройство еще не открыто </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a79496db3db86e733116ec0e493c25991"></a><!-- doxytag: member="EOpenModeUnsupported" ref="a848720f9216a4dc8c1d86d16c77c7a43a79496db3db86e733116ec0e493c25991" args="" -->EOpenModeUnsupported</em>&nbsp;</td><td>
+<p>режим открытия не поддерживается </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43ac9e492c1b02467d55159a3c2843fada4"></a><!-- doxytag: member="EOpenModeUndefined" ref="a848720f9216a4dc8c1d86d16c77c7a43ac9e492c1b02467d55159a3c2843fada4" args="" -->EOpenModeUndefined</em>&nbsp;</td><td>
+<p>режим открытия неопределен </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a51506739469aec16c4352f328296876d"></a><!-- doxytag: member="EOpenInvalidFD" ref="a848720f9216a4dc8c1d86d16c77c7a43a51506739469aec16c4352f328296876d" args="" -->EOpenInvalidFD</em>&nbsp;</td><td>
+<p>недействительный дескриптор </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a62c7ee87737e6466913de8a5a56673ce"></a><!-- doxytag: member="EOpenOldSettingsNotSaved" ref="a848720f9216a4dc8c1d86d16c77c7a43a62c7ee87737e6466913de8a5a56673ce" args="" -->EOpenOldSettingsNotSaved</em>&nbsp;</td><td>
+<p>ошибка сохранения старых параметров при открытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a938814599d00ffc0bef1d50d6d8a773e"></a><!-- doxytag: member="EOpenGetCurrentSettings" ref="a848720f9216a4dc8c1d86d16c77c7a43a938814599d00ffc0bef1d50d6d8a773e" args="" -->EOpenGetCurrentSettings</em>&nbsp;</td><td>
+<p>ошибка получения текущих параметров при открытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a6d150fd48b7f0c2612a94f511943b64f"></a><!-- doxytag: member="EOpenSetDefaultSettings" ref="a848720f9216a4dc8c1d86d16c77c7a43a6d150fd48b7f0c2612a94f511943b64f" args="" -->EOpenSetDefaultSettings</em>&nbsp;</td><td>
+<p>ошибка установки параметров по умолчанию при открытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a0c77ad1e779d28f2a52cee7a8f76b661"></a><!-- doxytag: member="EDeviceIsOpen" ref="a848720f9216a4dc8c1d86d16c77c7a43a0c77ad1e779d28f2a52cee7a8f76b661" args="" -->EDeviceIsOpen</em>&nbsp;</td><td>
+<p>устройство уже открыто </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a9fae4a6c1d8358e2d563ad90269eaba6"></a><!-- doxytag: member="ECloseSetOldSettings" ref="a848720f9216a4dc8c1d86d16c77c7a43a9fae4a6c1d8358e2d563ad90269eaba6" args="" -->ECloseSetOldSettings</em>&nbsp;</td><td>
+<p>ошибка сохранения старых параметров при закрытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43ae08b5ba69b7728a5ed90ae776afe9e43"></a><!-- doxytag: member="ECloseFD" ref="a848720f9216a4dc8c1d86d16c77c7a43ae08b5ba69b7728a5ed90ae776afe9e43" args="" -->ECloseFD</em>&nbsp;</td><td>
+<p>ошибка при закрытии дескриптора </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a9a34c9bea29c67c601fbda755e999bb7"></a><!-- doxytag: member="EClose" ref="a848720f9216a4dc8c1d86d16c77c7a43a9a34c9bea29c67c601fbda755e999bb7" args="" -->EClose</em>&nbsp;</td><td>
+<p>ошибка при закрытии </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a2229e560ca94200af547b306639983b7"></a><!-- doxytag: member="ESetBaudRate" ref="a848720f9216a4dc8c1d86d16c77c7a43a2229e560ca94200af547b306639983b7" args="" -->ESetBaudRate</em>&nbsp;</td><td>
+<p>ошибка при установке скорости </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a4cc93633881384c07281e4170ff16586"></a><!-- doxytag: member="ESetDataBits" ref="a848720f9216a4dc8c1d86d16c77c7a43a4cc93633881384c07281e4170ff16586" args="" -->ESetDataBits</em>&nbsp;</td><td>
+<p>ошибка при установке кол-ва бит данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43aa8cdfd873ae53eb128525dafa7591acb"></a><!-- doxytag: member="ESetParity" ref="a848720f9216a4dc8c1d86d16c77c7a43aa8cdfd873ae53eb128525dafa7591acb" args="" -->ESetParity</em>&nbsp;</td><td>
+<p>ошибка при установке паритета </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43afd1fcb0cd69d4387d7760682fa63d3bf"></a><!-- doxytag: member="ESetStopBits" ref="a848720f9216a4dc8c1d86d16c77c7a43afd1fcb0cd69d4387d7760682fa63d3bf" args="" -->ESetStopBits</em>&nbsp;</td><td>
+<p>ошибка при установке кол-ва стоп бит </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43aab895236454ed7663baad6d176850f07"></a><!-- doxytag: member="ESetFlowControl" ref="a848720f9216a4dc8c1d86d16c77c7a43aab895236454ed7663baad6d176850f07" args="" -->ESetFlowControl</em>&nbsp;</td><td>
+<p>ошибка при установке управления потоком </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a2206e88345e6257ddad8d81c1b762ecc"></a><!-- doxytag: member="ESetCharIntervalTimeout" ref="a848720f9216a4dc8c1d86d16c77c7a43a2206e88345e6257ddad8d81c1b762ecc" args="" -->ESetCharIntervalTimeout</em>&nbsp;</td><td>
+<p>ошибка при установке интервала ожидания символа </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a38891dca2a16b6ecde5fc68d414f4b1a"></a><!-- doxytag: member="EBytesAvailable" ref="a848720f9216a4dc8c1d86d16c77c7a43a38891dca2a16b6ecde5fc68d414f4b1a" args="" -->EBytesAvailable</em>&nbsp;</td><td>
+<p>ошибка при получении байт готовых для чтения </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43afdcddbeee6cee843e0efe51be7c708bf"></a><!-- doxytag: member="ESetDtr" ref="a848720f9216a4dc8c1d86d16c77c7a43afdcddbeee6cee843e0efe51be7c708bf" args="" -->ESetDtr</em>&nbsp;</td><td>
+<p>ошибка при установке DTR </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a1f736b0f07594f4eddc1d8c29a059852"></a><!-- doxytag: member="ESetRts" ref="a848720f9216a4dc8c1d86d16c77c7a43a1f736b0f07594f4eddc1d8c29a059852" args="" -->ESetRts</em>&nbsp;</td><td>
+<p>ошибка при установке RTS </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a35848ab6a0a27d3d6c4298c3244ac473"></a><!-- doxytag: member="ELineStatus" ref="a848720f9216a4dc8c1d86d16c77c7a43a35848ab6a0a27d3d6c4298c3244ac473" args="" -->ELineStatus</em>&nbsp;</td><td>
+<p>ошибка при получении статусов линий </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a0fdd94fa93b3994af131214ad44ee659"></a><!-- doxytag: member="EWaitReadyReadIO" ref="a848720f9216a4dc8c1d86d16c77c7a43a0fdd94fa93b3994af131214ad44ee659" args="" -->EWaitReadyReadIO</em>&nbsp;</td><td>
+<p>ошибка ввода/вывода при ожидании приема данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a0e2acdd8e7b720345c4261db068e4e38"></a><!-- doxytag: member="EWaitReadyReadTimeout" ref="a848720f9216a4dc8c1d86d16c77c7a43a0e2acdd8e7b720345c4261db068e4e38" args="" -->EWaitReadyReadTimeout</em>&nbsp;</td><td>
+<p>ошибка истечения времени при ожидании приема данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43aa00d7bb698621d1a20af14cab48153ca"></a><!-- doxytag: member="EWaitReadyWriteIO" ref="a848720f9216a4dc8c1d86d16c77c7a43aa00d7bb698621d1a20af14cab48153ca" args="" -->EWaitReadyWriteIO</em>&nbsp;</td><td>
+<p>ошибка ввода/вывода при ожидании передачи данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43ae9920891b328a785b331a38e5c8ac458"></a><!-- doxytag: member="EWaitReadyWriteTimeout" ref="a848720f9216a4dc8c1d86d16c77c7a43ae9920891b328a785b331a38e5c8ac458" args="" -->EWaitReadyWriteTimeout</em>&nbsp;</td><td>
+<p>ошибка истечения времени при ожидании передачи данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a0eb6d5dcc387ded4a1511c88df15b104"></a><!-- doxytag: member="EReadDataIO" ref="a848720f9216a4dc8c1d86d16c77c7a43a0eb6d5dcc387ded4a1511c88df15b104" args="" -->EReadDataIO</em>&nbsp;</td><td>
+<p>ошибка чтения данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43a01157b6db1463f0b207efb8b78965dcf"></a><!-- doxytag: member="EWriteDataIO" ref="a848720f9216a4dc8c1d86d16c77c7a43a01157b6db1463f0b207efb8b78965dcf" args="" -->EWriteDataIO</em>&nbsp;</td><td>
+<p>ошибка передачи данных </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a848720f9216a4dc8c1d86d16c77c7a43afe39f35ed97d821b4b6dcc9de768ce67"></a><!-- doxytag: member="EFlush" ref="a848720f9216a4dc8c1d86d16c77c7a43afe39f35ed97d821b4b6dcc9de768ce67" args="" -->EFlush</em>&nbsp;</td><td>
+<p>ошибка при очистки очереди буферов </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00115">115</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a2dba0ca8b36670676fb12e29e5d3790d"></a><!-- doxytag: member="AbstractSerial::StopBits" ref="a2dba0ca8b36670676fb12e29e5d3790d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790d">AbstractSerial::StopBits</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>В этом перечислении представлены все поддерживаемые классом <em><a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a></em> количества стоп бит. </p>
+<dl><dt><b>Элементы перечислений: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a2dba0ca8b36670676fb12e29e5d3790da6f8640b28a15259872a43e8b8df3395a"></a><!-- doxytag: member="StopBits1" ref="a2dba0ca8b36670676fb12e29e5d3790da6f8640b28a15259872a43e8b8df3395a" args="" -->StopBits1</em>&nbsp;</td><td>
+<p>один стоп бит </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a2dba0ca8b36670676fb12e29e5d3790da6f3a940858aa0c4dfa5b2a85ca875c22"></a><!-- doxytag: member="StopBits1_5" ref="a2dba0ca8b36670676fb12e29e5d3790da6f3a940858aa0c4dfa5b2a85ca875c22" args="" -->StopBits1_5</em>&nbsp;</td><td>
+<p>полтора стоп бита </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a2dba0ca8b36670676fb12e29e5d3790da03311387851750741ddda613fae064d8"></a><!-- doxytag: member="StopBits2" ref="a2dba0ca8b36670676fb12e29e5d3790da03311387851750741ddda613fae064d8" args="" -->StopBits2</em>&nbsp;</td><td>
+<p>два стоп бита </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8h_source.html">abstractserial.h</a> строка <a class="el" href="abstractserial_8h_source.html#l00097">97</a></p>
+
+</div>
+</div>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="a6c38a3a4a13a6012245cd930ac5d76b0"></a><!-- doxytag: member="AbstractSerial::AbstractSerial" ref="a6c38a3a4a13a6012245cd930ac5d76b0" args="(QObject *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractSerial::AbstractSerial </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&nbsp;</td>
+          <td class="paramname"> <em>parent</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [explicit]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор по умолчанию. Создает объект, ассоциированный с реальным последовательным устройством в системе. Например:</p>
+<ul>
+<li>для Windows - это COM1, COM2 ... COMn</li>
+<li>для Linux - это /dev/ttyS0, /dev/ttyS1 и т.д. <dl class="note"><dt><b>Заметки:</b></dt><dd>Если не указать (пропустить) в конструкторе параметр deviceName - то по умолчанию устройству присвоится имя = DEFAULT_DEVICE_NAME</dd></dl>
+<div class="fragment"><pre class="fragment">
+        Operating system:       Name DEFAULT_DEVICE_NAME:
+        Windows                 "COM1"
+        IRIX                    "/dev/ttyf1"
+        HPUX                    "/dev/tty1p0"
+        SOLARIS                 "/dev/ttya"
+        FREEBSD                 "/dev/ttyd1"
+        LINUX                   "/dev/ttyS0"
+        &lt;default&gt;               "/dev/ttyS0"
+    </pre></div> </li>
+</ul>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00511">511</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac4449f4fa19f39c9b449a680e8e80e5c"></a><!-- doxytag: member="AbstractSerial::~AbstractSerial" ref="ac4449f4fa19f39c9b449a680e8e80e5c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractSerial::~AbstractSerial </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Деструктор по умолчанию. </p>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00524">524</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="ab6afaee0921dcc3d28ad86edd71d3300"></a><!-- doxytag: member="AbstractSerial::baudRate" ref="ab6afaee0921dcc3d28ad86edd71d3300" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::baudRate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает скорость в ботах в виде строки с которой сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Скорость в виде строки QString</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00703">703</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aaf5547f961b9814a43df3644300e1cca"></a><!-- doxytag: member="AbstractSerial::bytesAvailable" ref="aaf5547f961b9814a43df3644300e1cca" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 AbstractSerial::bytesAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает количество байт готовых для чтения, которые находятся во входном буфере последовательного устройства </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>n - количество байт при успехе</li>
+<li>-1 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01341">1341</a></p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l01393">waitForReadyRead()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5a722ff5a2acecc4bd0e0e58f782500"></a><!-- doxytag: member="AbstractSerial::charIntervalTimeout" ref="af5a722ff5a2acecc4bd0e0e58f782500" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AbstractSerial::charIntervalTimeout </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает время ожидания прихода символа в приемный буфер последовательного устройства с которым сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Время ожидания прихода символа, в мсек</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01145">1145</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a910eb2d1a06dad8a601761b9f0b93fef"></a><!-- doxytag: member="AbstractSerial::close" ref="a910eb2d1a06dad8a601761b9f0b93fef" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractSerial::close </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Закрывает последовательное устройство. </p>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01271">1271</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00141">EClose</a> и <a class="el" href="abstractserial_8h_source.html#l00119">ENoneClose</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d0e2b00a07ce791655fc81c055074b1"></a><!-- doxytag: member="AbstractSerial::dataBits" ref="a0d0e2b00a07ce791655fc81c055074b1" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::dataBits </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает количество бит данных в виде строки с которым сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Количество бит данных в виде строки QString</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00797">797</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aab1784e8c45df7706006aaebdb595778"></a><!-- doxytag: member="AbstractSerial::deviceName" ref="aab1784e8c45df7706006aaebdb595778" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::deviceName </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает имя последовательного устройства, с которым сконфигурирован объект. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Имя последовательного устройства, с которым сконфигурирован объект в виде QString</li>
+<li>0 в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно в любой момент после создания объекта, т.е. неважно открыто реально устройство или нет. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00633">633</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a4035ced52430f945cb80c6f4cb845b03"></a><!-- doxytag: member="AbstractSerial::enableEmitStatus" ref="a4035ced52430f945cb80c6f4cb845b03" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractSerial::enableEmitStatus </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Включает или отключает флаг испускания сигнала <a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus()</a> </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>enable</em>&nbsp;</td><td>- желаемое значение флага </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>если:<ul>
+<li>enable = true - то это значит, что включить испускание сигнала <a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus()</a></li>
+<li>enable = false - то это значит, что отключить испускание сигнала <a class="el" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus()</a> </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01544">1544</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae26d565f341099ef8f30fbea682763fc"></a><!-- doxytag: member="AbstractSerial::flowControl" ref="ae26d565f341099ef8f30fbea682763fc" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::flowControl </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает режим управления потоком в виде строки с которым сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Режим управления потоком в виде строки QString</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01079">1079</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a9ba236a3c0216882a4797e66793dab53"></a><!-- doxytag: member="AbstractSerial::flush" ref="a9ba236a3c0216882a4797e66793dab53" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::flush </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Очищает буферы последовательного устройства. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01293">1293</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00162">EFlush</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a49ebaa6c7c3325356f9370006c75e647"></a><!-- doxytag: member="AbstractSerial::lineStatus" ref="a49ebaa6c7c3325356f9370006c75e647" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ulong AbstractSerial::lineStatus </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает статусы линий CTS, DSR, DCD, RI, RTS, DTR, ST, SR. Метод возвращает закодированные значения статусов линий побитовым ИЛИ. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01211">1211</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00155">ELineStatus</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75d3c4841e09dfff92d9023eb5a9c303"></a><!-- doxytag: member="AbstractSerial::listBaudRate" ref="a75d3c4841e09dfff92d9023eb5a9c303" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList AbstractSerial::listBaudRate </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текстовый список всех скоростей, поддерживаемых классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Список скоростей в виде QStringList </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00728">728</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad467f9716c0408122f66cb195d1e274c"></a><!-- doxytag: member="AbstractSerial::listDataBits" ref="ad467f9716c0408122f66cb195d1e274c" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList AbstractSerial::listDataBits </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текстовый список всех типов бит данных, поддерживаемых классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Список бит данных в виде QStringList </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00822">822</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aea0643a963ab9d03f203fb24e94c069f"></a><!-- doxytag: member="AbstractSerial::listFlowControl" ref="aea0643a963ab9d03f203fb24e94c069f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList AbstractSerial::listFlowControl </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текстовый список всех режимов управления потоком, поддерживаемых классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Список режимов управления потоком в виде QStringList </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01104">1104</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0fb20eb64dc40493da4ee5fef75f6252"></a><!-- doxytag: member="AbstractSerial::listParity" ref="a0fb20eb64dc40493da4ee5fef75f6252" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList AbstractSerial::listParity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текстовый список всех типов контроля четности , поддерживаемых классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Список контроля четности в виде QStringList </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00916">916</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1653a7170ca1bd3ce72c4c772f83ce8d"></a><!-- doxytag: member="AbstractSerial::listStopBits" ref="a1653a7170ca1bd3ce72c4c772f83ce8d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList AbstractSerial::listStopBits </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текстовый список всех типов стоп-бит, поддерживаемых классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd>Список стоп-бит в виде QStringList </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01010">1010</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a86b26aab8e89f9d824ca2380d67345b7"></a><!-- doxytag: member="AbstractSerial::open" ref="a86b26aab8e89f9d824ca2380d67345b7" args="(OpenMode mode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::open </td>
+          <td>(</td>
+          <td class="paramtype">OpenMode&nbsp;</td>
+          <td class="paramname"> <em>mode</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Открывает последовательное устройство. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>mode</em>&nbsp;</td><td>- режим открытия последовательного устройства </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd><ul>
+<li>Последовательное устройство открывается с параметрами по умолчанию в режиме 9600 8 N 1, и 10 мс время ожидания символа. После того, как устройство успешно открыто - можно приступать к его конфигурированию!</li>
+<li>Устройство правильно работает ТОЛЬКО при использовании режима QIODevice::Unbuffered </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01244">1244</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00137">EDeviceIsOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00118">ENoneOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00129">EOpen</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb5fd6928d92fd37c4bd4a286d3823ef"></a><!-- doxytag: member="AbstractSerial::parity" ref="aeb5fd6928d92fd37c4bd4a286d3823ef" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::parity </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает тип контроля четности в виде строки с которым сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Тип контроля четности в виде строки QString</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00891">891</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ad2eddcc8378f392741907c71e025a2db"></a><!-- doxytag: member="AbstractSerial::readData" ref="ad2eddcc8378f392741907c71e025a2db" args="(char *data, qint64 maxSize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 AbstractSerial::readData </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&nbsp;</td>
+          <td class="paramname"> <em>maxSize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Читает пакет данных из входного буфера последовательного устройства. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>*data</em>&nbsp;</td><td>- указатель на буфер (массив) в который происходит чтение пакета данных </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>maxSize</em>&nbsp;</td><td>- количество байт, которые необходимо прочитать </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>n - количество реально прочитанных байт - при успехе</li>
+<li>-1 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01450">1450</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00160">EReadDataIO</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9535db362a73d3bbee652117c59b386"></a><!-- doxytag: member="AbstractSerial::reset" ref="ac9535db362a73d3bbee652117c59b386" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::reset </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Сбрасывает буферы последовательного устройства. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01316">1316</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac04debfe93ef6160c91beb003984a3fb"></a><!-- doxytag: member="AbstractSerial::setBaudRate" ref="ac04debfe93ef6160c91beb003984a3fb" args="(const QString &amp;baudRate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setBaudRate </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>baudRate</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Эта функция перегружена и предоставляется исключительно для удобства использования. Она отличается от вышеупомянутой только фактическими аргументами. Устанавливает для последовательного устройства скорость в бодах. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>baudRate</em>&nbsp;</td><td>- желаемая скорость последовательного устройства в бодах в виде строки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>baudRate</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00680">680</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00120">ENoneSetBaudRate</a> и <a class="el" href="abstractserial_8cpp_source.html#l00653">setBaudRate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4230b061e5b7ac1e78f14111fcb5e0c6"></a><!-- doxytag: member="AbstractSerial::setBaudRate" ref="a4230b061e5b7ac1e78f14111fcb5e0c6" args="(BaudRate baudRate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setBaudRate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAbstractSerial.html#a091430826fae3e97f88b8ac168b1c6c1">BaudRate</a>&nbsp;</td>
+          <td class="paramname"> <em>baudRate</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает для последовательного устройства скорость в бодах. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>baudRate</em>&nbsp;</td><td>- желаемая скорость последовательного устройства в бодах из перечисления. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>baudRate</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00653">653</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00120">ENoneSetBaudRate</a> и <a class="el" href="abstractserial_8h_source.html#l00144">ESetBaudRate</a>.</p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l00680">setBaudRate()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3724dba338f618c83c2986cd39c3ac0"></a><!-- doxytag: member="AbstractSerial::setCharIntervalTimeout" ref="ab3724dba338f618c83c2986cd39c3ac0" args="(int msecs=10)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setCharIntervalTimeout </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>msecs</em> = <code>10</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает время ожидания прихода символа в приемный буфер последовательного устройства. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>msecs</em>&nbsp;</td><td>- желаемое время ожидания прихода символа, в мсек </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>msecs</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01123">1123</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00125">ENoneSetCharTimeout</a> и <a class="el" href="abstractserial_8h_source.html#l00149">ESetCharIntervalTimeout</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1ebc7c7230df191d34f3d00ae32d649"></a><!-- doxytag: member="AbstractSerial::setDataBits" ref="aa1ebc7c7230df191d34f3d00ae32d649" args="(const QString &amp;dataBits)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setDataBits </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>dataBits</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Эта функция перегружена и предоставляется исключительно для удобства использования. Она отличается от вышеупомянутой только фактическими аргументами. Устанавливает для последовательного устройства количество бит данных. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>dataBits</em>&nbsp;</td><td>- желаемое количество бит данных последовательного устройства в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>dataBits</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00774">774</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00122">ENoneSetDataBits</a> и <a class="el" href="abstractserial_8cpp_source.html#l00747">setDataBits()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af8f9de4e5dd1a5860828811b0dbfa48a"></a><!-- doxytag: member="AbstractSerial::setDataBits" ref="af8f9de4e5dd1a5860828811b0dbfa48a" args="(DataBits dataBits)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setDataBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAbstractSerial.html#a14e5a12d7683ff97a20d6cde8137c374">DataBits</a>&nbsp;</td>
+          <td class="paramname"> <em>dataBits</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает для последовательного устройства количество бит данных. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>dataBits</em>&nbsp;</td><td>- желаемое количество бит данных последовательного устройства из перечисления. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>dataBits</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00747">747</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00122">ENoneSetDataBits</a> и <a class="el" href="abstractserial_8h_source.html#l00145">ESetDataBits</a>.</p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l00774">setDataBits()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d10158846eeb575aec5370e46000ea2"></a><!-- doxytag: member="AbstractSerial::setDeviceName" ref="a5d10158846eeb575aec5370e46000ea2" args="(const QString &amp;deviceName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AbstractSerial::setDeviceName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>deviceName</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Присваивает созданному объекту имя последовательного устройства, с которым необходимо работать. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>deviceName</em>&nbsp;</td><td>- имя последовательного устройства, реально имеющегося в системе.<br/>
+ Например: для Windows - это COM1, COM2 ... COMn, для Linux - это /dev/ttyS0, /dev/ttyS1 и т.д. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод необходимо только ПЕРЕД открытием устройства! </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00615">615</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a33edd9a31838726c3868f450ec722c6d"></a><!-- doxytag: member="AbstractSerial::setDtr" ref="a33edd9a31838726c3868f450ec722c6d" args="(bool set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setDtr </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает линию DTR в состояное "high" или "low" в зависимости от входного параметра </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>set</em>&nbsp;</td><td>- желаемое состояние линии DTR </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01163">1163</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00153">ESetDtr</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84d8a9a8a203c817c24b8a0d30e7a31b"></a><!-- doxytag: member="AbstractSerial::setFlowControl" ref="a84d8a9a8a203c817c24b8a0d30e7a31b" args="(const QString &amp;flow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setFlowControl </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>flow</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Эта функция перегружена и предоставляется исключительно для удобства использования. Она отличается от вышеупомянутой только фактическими аргументами. Устанавливает для последовательного устройства режим управления потоком. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>flow</em>&nbsp;</td><td>- желаемый тип управления потоком последовательного устройства в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>flow</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01056">1056</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00124">ENoneSetFlow</a> и <a class="el" href="abstractserial_8cpp_source.html#l01029">setFlowControl()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3302e6a84396cc857c45b720d18d5c80"></a><!-- doxytag: member="AbstractSerial::setFlowControl" ref="a3302e6a84396cc857c45b720d18d5c80" args="(Flow flow)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setFlowControl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAbstractSerial.html#a5f545bacabb6ac912896a43fe8ac8783">Flow</a>&nbsp;</td>
+          <td class="paramname"> <em>flow</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает для последовательного устройства режим управления потоком. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>flow</em>&nbsp;</td><td>- желаемый тип управления потоком последовательного устройства из перечисления. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>flow</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01029">1029</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00124">ENoneSetFlow</a> и <a class="el" href="abstractserial_8h_source.html#l00148">ESetFlowControl</a>.</p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l01056">setFlowControl()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a191602af072c53502a309dec27717bf3"></a><!-- doxytag: member="AbstractSerial::setParity" ref="a191602af072c53502a309dec27717bf3" args="(const QString &amp;parity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setParity </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>parity</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Эта функция перегружена и предоставляется исключительно для удобства использования. Она отличается от вышеупомянутой только фактическими аргументами. Устанавливает для последовательного устройства тип контроля четности. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>parity</em>&nbsp;</td><td>- желаемый тип контроля четности последовательного устройства в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>parity</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00868">868</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00121">ENoneSetParity</a> и <a class="el" href="abstractserial_8cpp_source.html#l00841">setParity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a326b0132c818031f3980ba4ed4211747"></a><!-- doxytag: member="AbstractSerial::setParity" ref="a326b0132c818031f3980ba4ed4211747" args="(Parity parity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setParity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAbstractSerial.html#ae14096ea164575549a1122c762a97c0e">Parity</a>&nbsp;</td>
+          <td class="paramname"> <em>parity</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает для последовательного устройства тип контроля четности. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>parity</em>&nbsp;</td><td>- желаемый тип контроля четности последовательного устройства из перечисления. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>parity</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00841">841</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00121">ENoneSetParity</a> и <a class="el" href="abstractserial_8h_source.html#l00146">ESetParity</a>.</p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l00868">setParity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b7bae7aecda9c5163284d7f367ffd45"></a><!-- doxytag: member="AbstractSerial::setRts" ref="a2b7bae7aecda9c5163284d7f367ffd45" args="(bool set)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setRts </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>set</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает линию RTS в состояное "high" или "low" в зависимости от входного параметра </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>set</em>&nbsp;</td><td>- желаемое состояние линии RTS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01188">1188</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00154">ESetRts</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="affc6734d7af587f447a9b5b167f086d8"></a><!-- doxytag: member="AbstractSerial::setStopBits" ref="affc6734d7af587f447a9b5b167f086d8" args="(const QString &amp;stopBits)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setStopBits </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>stopBits</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Эта функция перегружена и предоставляется исключительно для удобства использования. Она отличается от вышеупомянутой только фактическими аргументами. Устанавливает для последовательного устройства количество стоп-бит. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>stopBits</em>&nbsp;</td><td>- желаемое количество стоп-бит последовательного устройства в виде строки </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>stopBits</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00962">962</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00123">ENoneSetStopBits</a> и <a class="el" href="abstractserial_8cpp_source.html#l00935">setStopBits()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5a7d7df595cd3adde5118fc066a7683"></a><!-- doxytag: member="AbstractSerial::setStopBits" ref="ac5a7d7df595cd3adde5118fc066a7683" args="(StopBits stopBits)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::setStopBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAbstractSerial.html#a2dba0ca8b36670676fb12e29e5d3790d">StopBits</a>&nbsp;</td>
+          <td class="paramname"> <em>stopBits</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Устанавливает для последовательного устройства количество стоп-бит. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>stopBits</em>&nbsp;</td><td>- желаемое количество стоп-бит последовательного устройства из перечисления. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Использовать этот метод можно <b>ТОЛЬКО</b> <b>ПОСЛЕ</b> <b>ТОГО</b> <b>КАК</b> <b>УСТРОЙСТВО</b> <b>ОТКРЫЛИ!</b> (иначе параметр <b>stopBits</b> будет игнорироваться) </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00935">935</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a>, <a class="el" href="abstractserial_8h_source.html#l00123">ENoneSetStopBits</a> и <a class="el" href="abstractserial_8h_source.html#l00147">ESetStopBits</a>.</p>
+
+<p>Используется в <a class="el" href="abstractserial_8cpp_source.html#l00962">setStopBits()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b86ef478c3d747bbe73715ae16352d1"></a><!-- doxytag: member="AbstractSerial::signalStatus" ref="a4b86ef478c3d747bbe73715ae16352d1" args="(const QString &amp;status, QDateTime current)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractSerial::signalStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&nbsp;</td>
+          <td class="paramname"> <em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDateTime&nbsp;</td>
+          <td class="paramname"> <em>current</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Этот сигнал испускается всякий раз при изменении статуса объекта <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a> при вызове его методов из секций public и protected. Изменение статуса может быть вызвано следующими причинами:</p>
+<ul>
+<li>при ошибках конфигурировании устройства</li>
+<li>при его открытии/закрытии</li>
+<li>при ошибках чтения/записи данных и т.п. <dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>status</em>&nbsp;</td><td>- текущий статус последовательного устройства </td></tr>
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>current</em>&nbsp;</td><td>- текущее значение даты/времени произошедшей смены статуса</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Применять этот сигнал можно в GUI приложении например таким образом: </dd>
+<dd>
+<div class="fragment"><pre class="fragment">        ...
+        connect( <span class="keyword">this</span>, SIGNAL(<a class="code" href="classAbstractSerial.html#a4b86ef478c3d747bbe73715ae16352d1">signalStatus</a>(<span class="keyword">const</span> QString &amp;, QDateTime)), widget, SLOT(update(<span class="keyword">const</span> QString &amp;, QDateTime)) );
+        ...
+        <span class="keywordtype">void</span> widget::update(<span class="keyword">const</span> QString &amp;msg, QDateTime dt)
+        {
+            ...
+            QString dtString = dt.time().toString();
+            QString str = msg + <span class="stringliteral">&quot;, in time:&quot;</span> + dtString;
+            ...
+            listWidget-&gt;addItem(str);
+            ...
+        }
+</pre></div> </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a class="anchor" id="a19b81b87f12773ac03f33aadc84b7a47"></a><!-- doxytag: member="AbstractSerial::stopBits" ref="a19b81b87f12773ac03f33aadc84b7a47" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString AbstractSerial::stopBits </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает количество стоп-бит в виде строки с которым сконфигурировано последовательное устройство. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>Количество стоп-бит в виде строки QString</li>
+<li>0 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l00985">985</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a7726f0f8d9662588574d32adad1cb955"></a><!-- doxytag: member="AbstractSerial::waitForBytesWritten" ref="a7726f0f8d9662588574d32adad1cb955" args="(int msecs=5000)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::waitForBytesWritten </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>msecs</em> = <code>5000</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ожидает ухода из выходного буфера последовательного устройства последнего символа в течении определенного времени. </p>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>В данной версии библиотеки этот метод пока не реализован. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01430">1430</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a54bff73451f15a1971d109663986331c"></a><!-- doxytag: member="AbstractSerial::waitForReadyRead" ref="a54bff73451f15a1971d109663986331c" args="(int msecs=5000)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AbstractSerial::waitForReadyRead </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>msecs</em> = <code>5000</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Ожидает прихода во входной буфер последовательного устройства хотя-бы одного байта данных в течении определенного времени. При успешном выполнении излучается сигнал readyRead(). </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>msecs</em>&nbsp;</td><td>- время в течении которого ожидается приход символа, в мсек </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - при успехе</li>
+<li>false - в случае ошибки или при таймауте </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01393">1393</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8cpp_source.html#l01341">bytesAvailable()</a>, <a class="el" href="abstractserial_8h_source.html#l00130">EDeviceIsNotOpen</a> и <a class="el" href="abstractserial_8h_source.html#l00157">EWaitReadyReadTimeout</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe7666f15efc16b4473e64325cbf68af"></a><!-- doxytag: member="AbstractSerial::writeData" ref="afe7666f15efc16b4473e64325cbf68af" args="(const char *data, qint64 maxSize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 AbstractSerial::writeData </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&nbsp;</td>
+          <td class="paramname"> <em>maxSize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Передает пакет данных в выходной буфер последовательного устройства. При успешном выполнении излучается сигнал bytesWritten(). </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>*data</em>&nbsp;</td><td>- указатель на буфер (массив) из которого происходит передача пакета данных </td></tr>
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>maxSize</em>&nbsp;</td><td>- количество байт, которые необходимо передать </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>n - количество реально переданных байт - при успехе</li>
+<li>-1 - в случае ошибки </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a> строка <a class="el" href="abstractserial_8cpp_source.html#l01474">1474</a></p>
+
+<p>Перекрестные ссылки <a class="el" href="abstractserial_8h_source.html#l00161">EWriteDataIO</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>qserialdevice/<a class="el" href="abstractserial_8h_source.html">abstractserial.h</a></li>
+<li>qserialdevice/<a class="el" href="abstractserial_8cpp_source.html">abstractserial.cpp</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Документация по QSerialDevice. Последние изменения: Tue Mar 2 18:39:51 2010. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

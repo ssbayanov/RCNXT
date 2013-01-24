@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>QSerialDevice: Класс SerialDeviceWatcher</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- Создано системой Doxygen 1.6.3 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Титульная&nbsp;страница</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="functions.html"><span>Члены&nbsp;классов</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Класс SerialDeviceWatcher</h1><!-- doxytag: class="SerialDeviceWatcher" -->
+<p>Класс <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a> следит за добавлением/удалением последовательных устройств в системе.  
+<a href="#_details">Подробнее...</a></p>
+
+<p><a href="classSerialDeviceWatcher-members.html">Полный список членов класса</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><h2>Сигналы</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#ab032f14c9866ad30a41e061285c475c7">hasChanged</a> (const QStringList &amp;list)</td></tr>
+<tr><td colspan="2"><h2>Открытые члены</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#ab04562516257d7a150fc0e57d96dade5">SerialDeviceWatcher</a> (QObject *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#ab7a6e67bbb332726899a35b33c940abf">~SerialDeviceWatcher</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#adebdca52cb29eb6c52c259c3daf4df05">setEnabled</a> (bool enable)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#abb609dca9f38027bb7e4b6617c3dffdf">isEnabled</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QStringList&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSerialDeviceWatcher.html#a7dba4f50aa24e852043cb18f851de1e8">devicesAvailable</a> () const </td></tr>
+</table>
+<hr/><a name="_details"></a><h2>Подробное описание</h2>
+<p>Класс <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a> следит за добавлением/удалением последовательных устройств в системе. </p>
+<p>Этот класс является частью библиотеки QSerialDevice и может использоваться совместно с классом <a class="el" href="classAbstractSerial.html" title="Класс AbstractSerial предоставляет минимальный и достаточны�...">AbstractSerial</a>. <br/>
+</p>
+<p>Данный класс предоставляет следующие возможности:</p>
+<ul>
+<li>получать список имен всех имеющихся в системе последовательных устройств.</li>
+<li>сообщать об удалении/добавлении последовательного устройства.</li>
+</ul>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>В текущей версии - работа класса тестировалась (тестировалась автором) только в операционных системах:<ul>
+<li>MS Windows XP Pro SP3</li>
+<li>ArchLinux x86_64</li>
+</ul>
+</dd></dl>
+<p>Принцип работы класса в разных операционных системах имеет существенные отличия:</p>
+<ul>
+<li>в MS Windows XP - информация о наличии последовательных устройств, а также события при добавлении/удалении последовательных устройств, добывается путем чтения системного реестра по соответствующим путям и контроля изменений некоторых ключей.</li>
+<li>в Linux - для получении информации используется <b>UDEV</b> в совокупности с анализом содержимого директории "/dev/".</li>
+</ul>
+<p>Начало работы с классом необходимо начинать с создания экземпляра объекта <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a>.<br/>
+ Пример: </p>
+<div class="fragment"><pre class="fragment">        ...
+        <a class="code" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a> *sdw = <span class="keyword">new</span> <a class="code" href="classSerialDeviceWatcher.html#ab04562516257d7a150fc0e57d96dade5">SerialDeviceWatcher</a>(<span class="keyword">this</span>);
+        connect(sdw, SIGNAL(<a class="code" href="classSerialDeviceWatcher.html#ab032f14c9866ad30a41e061285c475c7">hasChanged</a>(<span class="keyword">const</span> QStringList &amp;)), <span class="keyword">this</span>, SLOT(showChange(<span class="keyword">const</span> QStringList &amp;)));
+        ...
+</pre></div><p>По умолчанию новый экземпляр класса создается с отключенным контролем/слежением за наличием/отсутствием последовательных устройств. <br/>
+ Код: </p>
+<div class="fragment"><pre class="fragment">        ...
+        connect(sdw, SIGNAL(<a class="code" href="classSerialDeviceWatcher.html#ab032f14c9866ad30a41e061285c475c7">hasChanged</a>(<span class="keyword">const</span> QStringList &amp;)), <span class="keyword">this</span>, SLOT(showChange(<span class="keyword">const</span> QStringList &amp;)));
+        ...
+</pre></div><p> можно использовать, если Вы хотите получать и обрабатывать сигналы/уведомления о добавлении/удалении последовательных устройств в системе (см. ниже описание сигнала <a class="el" href="classSerialDeviceWatcher.html#ab032f14c9866ad30a41e061285c475c7">hasChanged()</a> ). </p>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Делать <b>connect</b> необходимо до вызова метода: <b>setEnabled(true)</b>.</dd></dl>
+<p>Для включения/отключения контроля/слежения за последовательными устройствами используется метод:</p>
+<ul>
+<li>void <a class="el" href="classSerialDeviceWatcher.html#adebdca52cb29eb6c52c259c3daf4df05">SerialDeviceWatcher::setEnabled(bool enable)</a>. <br/>
+</li>
+</ul>
+<p>Для получения состояния класса (включен или отключен) используется метод:</p>
+<ul>
+<li>bool <a class="el" href="classSerialDeviceWatcher.html#abb609dca9f38027bb7e4b6617c3dffdf">SerialDeviceWatcher::isEnabled() const</a>. <br/>
+</li>
+</ul>
+<p>Для получения списка имен всех имеющихся в системе последовательных устройств используется метод:</p>
+<ul>
+<li>QStringList <a class="el" href="classSerialDeviceWatcher.html#a7dba4f50aa24e852043cb18f851de1e8">SerialDeviceWatcher::devicesAvailable() const</a>. <br/>
+</li>
+</ul>
+<p>Класс <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a> реализует следующие сигналы:</p>
+<ul>
+<li>void <a class="el" href="classSerialDeviceWatcher.html#ab032f14c9866ad30a41e061285c475c7">SerialDeviceWatcher::hasChanged(const QStringList &amp;list)</a> - излучается <b>КАЖДЫЙ</b> раз при добавлении/удалении хотябы одного последовательного устройства. <dl class="note"><dt><b>Заметки:</b></dt><dd>При первом вызове метода <b>setEnabled(true)</b> - сигнал вызовется автоматически с передачей в переменной <b>list</b> списка имен всех имеющихся в текущее время последовательных устройств. При последующих вызовах метода <a class="el" href="classSerialDeviceWatcher.html#adebdca52cb29eb6c52c259c3daf4df05">setEnabled()</a> - сигнал автоматически будет излучаться только: при включенном состоянии класса <b>И</b> при добавлении/удалении устройства. <br/>
+</dd></dl>
+<br/>
+ <br/>
+ <br/>
+</li>
+</ul>
+<dl class="warning"><dt><b>Предупреждения:</b></dt><dd>По умолчанию класс сконфигурирован таким образом, чтобы записывать в консоль отладочные сообщения. Для отключения вывода этих сообщений в консоль - необходимо закомментировать в *.cpp файлах строчки вида: <div class="fragment"><pre class="fragment">        ...
+        #define NATIVESERIALENGINE_DEBUG
+        ...
+</pre></div> и заново пересобрать библиотеку.</dd></dl>
+<p>0.2.0 </p>
+<dl class="author"><dt><b>Автор:</b></dt><dd>Denis Shienkov<ul>
+<li>ICQ : 321789831</li>
+<li>e-mail : <a href="mailto:scapig2@yandex.ru">scapig2@yandex.ru</a></li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd><ul>
+<li>Работа библиотеки тестировалась автором только с: Windows XP Pro SP3 и ArchLinux x86_64. </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8h_source.html">serialdevicewatcher.h</a> строка <a class="el" href="serialdevicewatcher_8h_source.html#l00028">28</a></p>
+<hr/><h2>Конструктор(ы)</h2>
+<a class="anchor" id="ab04562516257d7a150fc0e57d96dade5"></a><!-- doxytag: member="SerialDeviceWatcher::SerialDeviceWatcher" ref="ab04562516257d7a150fc0e57d96dade5" args="(QObject *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SerialDeviceWatcher::SerialDeviceWatcher </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&nbsp;</td>
+          <td class="paramname"> <em>parent</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [explicit]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Конструктор по умолчанию. </p>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a> строка <a class="el" href="serialdevicewatcher_8cpp_source.html#l00208">208</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab7a6e67bbb332726899a35b33c940abf"></a><!-- doxytag: member="SerialDeviceWatcher::~SerialDeviceWatcher" ref="ab7a6e67bbb332726899a35b33c940abf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SerialDeviceWatcher::~SerialDeviceWatcher </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Деструктор по умолчанию. </p>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a> строка <a class="el" href="serialdevicewatcher_8cpp_source.html#l00219">219</a></p>
+
+</div>
+</div>
+<hr/><h2>Методы</h2>
+<a class="anchor" id="a7dba4f50aa24e852043cb18f851de1e8"></a><!-- doxytag: member="SerialDeviceWatcher::devicesAvailable" ref="a7dba4f50aa24e852043cb18f851de1e8" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList SerialDeviceWatcher::devicesAvailable </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает список имен всех последовательных устройств, которые присутствуют в системе на момент вызова метода. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>список имен последовательных устройств</li>
+<li>0 в случае ошибки или при отсутствии последовательных устройств </li>
+</ul>
+</dd></dl>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a> строка <a class="el" href="serialdevicewatcher_8cpp_source.html#l00234">234</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ab032f14c9866ad30a41e061285c475c7"></a><!-- doxytag: member="SerialDeviceWatcher::hasChanged" ref="ab032f14c9866ad30a41e061285c475c7" args="(const QStringList &amp;list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SerialDeviceWatcher::hasChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&nbsp;</td>
+          <td class="paramname"> <em>list</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [signal]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Этот сигнал испускается каждый раз только при добавлении/удалении последовательного устройства из системы. Исключением является только случай когда первый раз вызывается метод setEnabled(true) - тогда сигнал принудительно автоматически излучается! </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[out]</tt>&nbsp;</td><td valign="top"><em>list</em>&nbsp;</td><td>- обновленный после добавления/удаления список имен последовательных устройств. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abb609dca9f38027bb7e4b6617c3dffdf"></a><!-- doxytag: member="SerialDeviceWatcher::isEnabled" ref="abb609dca9f38027bb7e4b6617c3dffdf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SerialDeviceWatcher::isEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Возвращает текущий статус/состояние/режим работы класса <a class="el" href="classSerialDeviceWatcher.html" title="Класс SerialDeviceWatcher следит за добавлением/удалением...">SerialDeviceWatcher</a>. </p>
+<dl class="return"><dt><b>Возвращает:</b></dt><dd><ul>
+<li>true - мониторинг включен</li>
+<li>false - мониторинг отключен </li>
+</ul>
+</dd></dl>
+<dl class="note"><dt><b>Заметки:</b></dt><dd>Включение/отключение мониторинга производится методом: <a class="el" href="classSerialDeviceWatcher.html#adebdca52cb29eb6c52c259c3daf4df05">setEnabled(bool enable)</a>. </dd></dl>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a> строка <a class="el" href="serialdevicewatcher_8cpp_source.html#l00268">268</a></p>
+
+</div>
+</div>
+<a class="anchor" id="adebdca52cb29eb6c52c259c3daf4df05"></a><!-- doxytag: member="SerialDeviceWatcher::setEnabled" ref="adebdca52cb29eb6c52c259c3daf4df05" args="(bool enable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SerialDeviceWatcher::setEnabled </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>enable</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Включает или отключает режим мониторинга/слежения за добавлением или удалением последовательных устройств из системы. </p>
+<dl><dt><b>Аргументы:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"><tt>[in]</tt>&nbsp;</td><td valign="top"><em>enable</em>&nbsp;</td><td>- флаг:</p>
+<ul>
+<li>если его значение <b>true</b> - то включается режим мониторинга/слежения</li>
+<li>если его значение <b>false</b> - то отключается режим мониторинга/слежения </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>См. определение в файле <a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a> строка <a class="el" href="serialdevicewatcher_8cpp_source.html#l00251">251</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>qserialdevicewatcher/<a class="el" href="serialdevicewatcher_8h_source.html">serialdevicewatcher.h</a></li>
+<li>qserialdevicewatcher/<a class="el" href="serialdevicewatcher_8cpp_source.html">serialdevicewatcher.cpp</a></li>
+</ul>
+</div>
+<hr class="footer"/><address style="text-align: right;"><small>Документация по QSerialDevice. Последние изменения: Tue Mar 2 18:39:51 2010. Создано системой&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
+</body>
+</html>

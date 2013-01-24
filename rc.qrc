@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="connect.png">images/connect.png</file>
+        <file alias="disconnect.png">images/disconnect.png</file>
+        <file alias="dvig.png">images/dvig.png</file>
+        <file alias="differenc.png">images/differenc.png</file>
+        <file alias="up.png">images/up.png</file>
+        <file alias="down.png">images/down.png</file>
+        <file alias="left.png">images/left.png</file>
+        <file alias="right.png">images/right.png</file>
+        <file alias="batmis.png">icons/batmis.png</file>
+        <file alias="batlow.png">icons/batlow.png</file>
+        <file alias="bat20.png">icons/bat20.png</file>
+        <file alias="bat40.png">icons/bat40.png</file>
+        <file alias="bat60.png">icons/bat60.png</file>
+        <file alias="bat80.png">icons/bat80.png</file>
+        <file alias="bat100.png">icons/bat100.png</file>
+        <file alias="save.png">icons/save.png</file>
+        <file alias="open.png">icons/open.png</file>
+        <file alias="exit.png">icons/exit.png</file>
+        <file alias="debug.png">icons/debug.png</file>
+        <file alias="error.png">icons/error.png</file>
+        <file alias="info.png">icons/info.png</file>
+        <file alias="rfName">icons/view-refresh.png</file>
+        <file alias="del">icons/delete.png</file>
+    </qresource>
+</RCC>

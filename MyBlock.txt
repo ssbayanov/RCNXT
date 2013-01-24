@@ -1,0 +1,57 @@
+﻿class MyBlock public: QObject
+{
+public:
+	enum SensorType {
+		SensorUsonic;
+		SensorLight;
+		SensorColor;
+		SensorSound;
+		SensorTouch;};
+
+	enum ports {
+		portA = 0x00;
+		portB = 0x01;
+		portC = 0x02;
+		port1 = 0x00;
+		port2 = 0x01;
+		port3 = 0x02;
+		port4 = 0x03;};
+	
+	enum errors{
+		};
+
+	struct motorCommand {
+		bool motors[3];
+		char power[3];}
+
+	class CommandButton public: QToolButton {
+		public:
+			motorCommand motors;}
+
+	struct InfoBlock {
+		QString name;
+		float fWVersion;}
+
+
+
+	bool connect(QString portName);
+	bool disconnect();
+	
+	char sendMessage(QByteArray msg); //Отправка низкоуровневого сообщения
+	QByteArray sendMessage(QByteArray msg,char controlByte); //Отправка низкоуровненвого сообщения с получением ответа
+
+	char sendBtMessage(int mailBox, QString msg); //Отправка сообщения в программу (Обязательно на блоке должна быть запущена программа)
+	QString getBtMesaage(int localMB, int globalMB); //Получит сообщение с программы
+
+	float getBatt(); //Получить заряд баттареи
+	InfoBlock getInfo(); //Получить информацию о блоке
+
+	void motor(motorCommand *motors); //мощность задаётся через запятую от указания порта (большей части для кнопок)
+	void motor(motorCommand *motors, int power = 100); //Мощность на все указанные двигатели
+	void motor(motorCommand *motors, int power = 100, long int endTacho);
+
+	void setSensType(SensorType type,int port);
+	QVarian getSensorValue(int port);
+	
+	char sendFile(QFile *f);
+}
